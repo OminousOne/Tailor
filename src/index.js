@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 var request = require('request');
 var fs = require('fs');
+const drivelist = require('drivelist');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -52,7 +53,7 @@ app.on('activate', () => {
 /* USEAGE -->
 downloadFile({
   remoteFile: "https://someurl/foo.bar",
-  localFile: `${__dirname}/tmp/foo.bar`,
+  localFile: `${__dirname}/OSCache/foo.bar`,
   onProgress: function (received,total){
       var percentage = Math.trunc((received * 100) / total);
       console.log(percentage + "% | " + received + " bytes out of " + total + " bytes.");
