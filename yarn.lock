@@ -1204,7 +1204,7 @@
     "lodash.template" "^4.2.2"
     "temp" "^0.9.0"
 
-"electron@17.0.0":
+"electron@^17.0.0":
   "integrity" "sha512-3UXcBQMwbMWdPvGHaSdPMluHrd+/bc+K143MyvE5zVZ+S1XCHt4sau7dj6svJHns5llN0YG/c6h/vRfadIp8Zg=="
   "resolved" "https://registry.npmjs.org/electron/-/electron-17.0.0.tgz"
   "version" "17.0.0"
