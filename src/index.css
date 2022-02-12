@@ -67,6 +67,23 @@ margin-left:10px;
   right: 30%;
   cursor: pointer;
 }
+#driveMenu {
+  font-family: 'Oswald', sans-serif;
+  margin-left: 5%; 
+  background-color: #21949c;
+  width: 25%;
+  height:5%;
+  border-radius:10px;
+  display:block;
+  position:absolute;
+  top: 52%;
+  right: 30%;
+  cursor: pointer;
+}
+#driveName {
+  margin-top:3.5%;
+  position:initial;
+}
 span {
   position:absolute;
   top:25%;
