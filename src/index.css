@@ -5,8 +5,9 @@ body {
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
-  background-color: #2c2c2c;
+  background-color: rgba(33, 33, 33, 0.933);
   color: #ffffff;
+  z-index:0;
 }
 #logoBar {
   position: absolute;
@@ -17,7 +18,7 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 #expand {
-  width: 100%;
+  width: 3%;
   height:3px;
   position:absolute;
   background-color: #ffffff;
@@ -123,7 +124,30 @@ span {
   height:15%;
   border-radius:15px;
 }
+#pullout {
+  background-color: rgb(58, 58, 58);
+  display:none; 
+  position:absolute;
+  width:40%;
+  height:100%;
+  left:0;
+  top:0;
+  z-index:69;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#progLine {
+  background-color: rgb(58, 58, 58);
+  top: 16%;
+  right: 10%;
+  position:absolute;
+  width: 2%;
+  height: 60%;
+  z-index: -1;
+}
 /*
+    Fonts:
+
     font-family: 'Oswald', sans-serif;
 
     font-family: 'Roboto Mono', monospace;
@@ -131,5 +155,10 @@ span {
 /*
     Colour palette:
 
-
+    background: rgba(33, 33, 33, 0.933)
+    standout divs: rgb(58, 58, 58)
+    accent: #21949c
+    text: white
+    text2: #b3b3b3
+    cheese
 */
