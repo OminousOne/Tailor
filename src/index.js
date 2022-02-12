@@ -155,8 +155,9 @@ function CreateOSCache() {
 
 function ClearCache() {
   try {
-    fs.unlinkSync(`${__dirname}/OSCache/`);
+    fs.rmdir(`${__dirname}/OSCache/`, { recursive: true }, (err) => {
+    });
   } catch (error) {
-    
+    console.log(error);
   }
 }
