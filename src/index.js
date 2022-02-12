@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 var request = require('request');
 var fs = require('fs');
-const drivelist = require('drivelist');
+const nodeDiskInfo = require('node-disk-info');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -22,6 +22,8 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  console.log(GetDisks());
 };
 
 // This method will be called when Electron has finished
@@ -62,7 +64,7 @@ downloadFile({
   console.log("File succesfully downloaded");
 });
 */
-function downloadFile(configuration){
+function DownloadFile(configuration){
   return new Promise(function(resolve, reject){
       // Save variable to know progress
       var received_bytes = 0;
@@ -100,4 +102,18 @@ function downloadFile(configuration){
           resolve();
       });
   });
+}
+
+function GetDisks() {
+  var diskFilesystems = [];
+    try {
+      const disks = nodeDiskInfo.getDiskInfoSync();
+      for(const disk of disks) {
+        diskFilesystems.push(disk.filesystem);
+      }
+
+      return diskFilesystems;
+  } catch (e) {
+      console.error(e);
+  }
 }
