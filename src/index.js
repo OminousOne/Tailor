@@ -23,7 +23,7 @@ const createWindow = () => {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
-  console.log(GetDisks());
+  DownloadOS(0, 0);
 };
 
 // This method will be called when Electron has finished
@@ -53,7 +53,7 @@ app.on('activate', () => {
 
 //File downloading function
 /* USEAGE -->
-downloadFile({
+DownloadFile({
   remoteFile: "https://someurl/foo.bar",
   localFile: `${__dirname}/OSCache/foo.bar`,
   onProgress: function (received,total){
@@ -115,6 +115,41 @@ function GetDisks() {
       return diskFilesystems;
   } catch (e) {
       console.error(e);
+  }
+}
+
+function DownloadOS(osId, deId) {
+  CreateOSCache();
+
+  switch(osId) {
+    case 0:
+      switch(deId) {
+        case 0:
+          DownloadFile({
+            remoteFile: "https://download.manjaro.org/xfce/21.2.2/manjaro-xfce-21.2.2-220123-linux515.iso",
+            localFile: `${__dirname}/OSCache/manjaro-xfce-21.2.2-220123-linux515.iso`,
+            onProgress: function (received,total){
+                var percentage = Math.trunc((received * 100) / total);
+                console.log(percentage + "% | " + received + " bytes out of " + total + " bytes.");
+            }
+          }).then(function(){
+            console.log("File succesfully downloaded");
+          });
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+      }
+      break;
+  }
+}
+
+function CreateOSCache() {
+  try {
+    fs.mkdirSync(`${__dirname}/OSCache/`); 
+  } catch (error) {
+    console.warn("OSCache directory already exists");
   }
 }
 
