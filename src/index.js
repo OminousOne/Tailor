@@ -117,3 +117,11 @@ function GetDisks() {
       console.error(e);
   }
 }
+
+function ClearCache() {
+  try {
+    fs.unlinkSync(`${__dirname}/OSCache/`);
+  } catch (error) {
+    
+  }
+}
