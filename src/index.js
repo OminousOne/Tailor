@@ -4,7 +4,7 @@ var request = require('request');
 var fs = require('fs');
 const nodeDiskInfo = require('node-disk-info');
 
-ipcMain.on('click', () => console.log('do something'));
+ipcMain.on('click', () => ClearCache());
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -17,6 +17,10 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 800,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+  }
   });
 
   // and load the index.html of the app.
@@ -25,7 +29,7 @@ const createWindow = () => {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
-  DownloadOS(0, 0);
+  //DownloadOS(0, 0);
 };
 
 // This method will be called when Electron has finished
