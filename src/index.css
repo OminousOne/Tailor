@@ -47,8 +47,12 @@ body {
   font-family: 'Roboto Mono'  , monospace;
   position:absolute;
 }
-span {
-  margin-left: 10px;
+span,p {
+margin-left:10px;
+}
+#osName {
+  margin-top:3.5%;
+  position:initial;
 }
 #isoMenu {
   font-family: 'Oswald', sans-serif;
@@ -75,7 +79,7 @@ span {
   right: 3%;
   height: 20px;
   width:20px;
-  top: 30%;
+  margin-top:5%;
 }
 .step {
   font-family: 'Oswald', sans-serif;
