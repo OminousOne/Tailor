@@ -5,7 +5,7 @@ body {
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
-  background-color: #3b3b3b;
+  background-color: #2c2c2c;
   color: #ffffff;
 }
 #logoBar {
@@ -17,9 +17,28 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 #expand {
-  width: 1%;
-  height:0.25%;
+  width: 100%;
+  height:3px;
   position:absolute;
+  background-color: #ffffff;
+  left: 5%;
+  box-shadow: 0px 10px #ffffff,0px 20px #ffffff;
+  z-index: 10
+}
+#cloud {
+  width: 20%;
+  height: auto;
+  right: 5%;
+  top:15%;
+  position: absolute;
+}
+#expandContainer {
+  cursor: pointer;
+  height:30px;
+  width:3%;
+  position:absolute;
+  left: 5%;
+  z-index: -1;
 }
 #version {
   top: 7.5%;
@@ -39,8 +58,9 @@ span {
   border-radius:10px;
   display:block;
   position:absolute;
-  top: 20%;
-  right: 20%
+  top: 27%;
+  right: 30%;
+  cursor: pointer;
 }
 span {
   position:absolute;
@@ -56,7 +76,53 @@ span {
   width:20px;
   top: 30%;
 }
-
+.step {
+  font-family: 'Oswald', sans-serif;
+  color: #b3b3b3;
+  font-size: 25pt;
+  position: absolute;
+}
+#stepDiv {
+  background-color: rgb(102, 102, 102);
+  position: absolute;
+  border-style: solid;
+}
+#s1 {
+  top:16%;
+  left:42%;
+  position:absolute;
+  background-color: rgb(58, 58, 58);
+  width:50%;
+  border-style:solid;
+  border-color:rgb(58, 58, 58);
+  border-width: 10pt;
+  height:15%;
+  border-radius:15px;
+}
+#s2 {
+  top:41%;
+  left:42%;
+  position:absolute;
+  background-color: rgb(58, 58, 58);
+  width:50%;
+  border-style:solid;
+  border-color:rgb(58, 58, 58);
+  border-width: 10pt;
+  height:15%;
+  border-radius:15px;
+}
+#s3 {  
+  top:66%;
+  left:42%;
+  position:absolute;
+  background-color: rgb(58, 58, 58);
+  width:50%;
+  border-style:solid;
+  border-color:rgb(58, 58, 58);
+  border-width: 10pt;
+  height:15%;
+  border-radius:15px;
+}
 /*
     font-family: 'Oswald', sans-serif;
 
