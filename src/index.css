@@ -17,7 +17,7 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 #expand {
-  width: 100%;
+  width: 3%;
   height:3px;
   position:absolute;
   background-color: #ffffff;
