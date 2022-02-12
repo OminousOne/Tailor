@@ -22,8 +22,6 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
-
-  console.log(GetDisks());
 };
 
 // This method will be called when Electron has finished
@@ -115,5 +113,30 @@ function GetDisks() {
       return diskFilesystems;
   } catch (e) {
       console.error(e);
+  }
+}
+
+function DownloadOS(osId, deId) {
+  CreateOSCache();
+
+  switch(osId) {
+    case 0:
+      switch(deId) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+      }
+      break;
+  }
+}
+
+function CreateOSCache() {
+  try {
+    fs.mkdirSync(`${__dirname}/OSCache/`); 
+  } catch (error) {
+    console.warn("OSCache directory already exists");
   }
 }
