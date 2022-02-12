@@ -152,3 +152,11 @@ function CreateOSCache() {
     console.warn("OSCache directory already exists");
   }
 }
+
+function ClearCache() {
+  try {
+    fs.unlinkSync(`${__dirname}/OSCache/`);
+  } catch (error) {
+    
+  }
+}
