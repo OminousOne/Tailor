@@ -1,8 +1,10 @@
-const { app, BrowserWindow } = require('electron');
+const { ipcMain, app, BrowserWindow } = require('electron');
 const path = require('path');
 var request = require('request');
 var fs = require('fs');
 const nodeDiskInfo = require('node-disk-info');
+
+ipcMain.on('click', () => console.log('do something'));
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
