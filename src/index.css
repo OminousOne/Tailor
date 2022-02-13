@@ -17,6 +17,14 @@ body {
   font-size: 25pt;
   font-family: 'Oswald', sans-serif;
 }
+#title2 {
+  font-family: 'Oswald', sans-serif;
+  position: absolute;
+  top: 2%;
+  left:1%;
+  font-size: 20pt;
+
+}
 #expand {
   width: 3%;
   height:3px;
@@ -97,6 +105,14 @@ span {
   height: 20px;
   width:20px;
   margin-top:5%;
+}
+#dropArrow2 {
+  display: block;
+  position: absolute;
+  right: 3%;
+  height: 20px;
+  width:20px;
+  top: 25%;
 }
 .step {
   font-family: 'Oswald', sans-serif;
