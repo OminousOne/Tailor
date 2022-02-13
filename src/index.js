@@ -6,6 +6,8 @@ const nodeDiskInfo = require('node-disk-info');
 
 ipcMain.on('click', () => ClearCache());
 
+var osCacheSize = "";
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
@@ -30,7 +32,7 @@ const createWindow = () => {
   mainWindow.webContents.openDevTools();
 
   //DownloadOS(0, 0);
-  
+  GetOSCacheSize();
 };
 
 // This method will be called when Electron has finished
@@ -180,24 +182,20 @@ function ClearCache() {
   try {
     fs.rmdir(`${__dirname}/OSCache/`, { recursive: true }, (err) => {
     });
+    GetOSCacheSize();
   } catch (error) {
-    console.log(error);
+    
   }
 }
 
 function GetOSCacheSize() {
   var totalBytes = 0;
-  var index = 0;
   let filenames = fs.readdirSync(`${__dirname}/OSCache/`);
   
   filenames.forEach((file) => {
       fs.stat(`${__dirname}/OSCache/` + file, function(err, stats) {
         totalBytes = totalBytes + stats.size;
-        index++;
-
-        if(index >= filenames.length) {
-          return convertBytes(totalBytes);
-        }
+        osCacheSize = convertBytes(totalBytes);
       });
   });
 }
