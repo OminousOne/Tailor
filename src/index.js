@@ -30,6 +30,7 @@ const createWindow = () => {
   mainWindow.webContents.openDevTools();
 
   //DownloadOS(0, 0);
+  
 };
 
 // This method will be called when Electron has finished
@@ -53,6 +54,22 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+const convertBytes = function(bytes) {
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB"]
+
+  if (bytes == 0) {
+    return "n/a"
+  }
+
+  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)))
+
+  if (i == 0) {
+    return bytes + " " + sizes[i]
+  }
+
+  return (bytes / Math.pow(1024, i)).toFixed(1) + " " + sizes[i]
+}
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
@@ -166,4 +183,21 @@ function ClearCache() {
   } catch (error) {
     console.log(error);
   }
+}
+
+function GetOSCacheSize() {
+  var totalBytes = 0;
+  var index = 0;
+  let filenames = fs.readdirSync(`${__dirname}/OSCache/`);
+  
+  filenames.forEach((file) => {
+      fs.stat(`${__dirname}/OSCache/` + file, function(err, stats) {
+        totalBytes = totalBytes + stats.size;
+        index++;
+
+        if(index >= filenames.length) {
+          return convertBytes(totalBytes);
+        }
+      });
+  });
 }
