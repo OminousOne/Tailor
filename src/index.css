@@ -91,6 +91,11 @@ span {
   bottom: auto;
   left: 5%
 }
+.standardText {
+  font-size: 16pt;
+  font-family: 'Oswald', sans-serif;
+  position:absolute;
+}
 #dropArrow {
   display: block;
   position: absolute;
@@ -105,7 +110,6 @@ span {
   right: 3%;
   height: 20px;
   width:20px;
-  top: 25%;
 }
 .step {
   font-family: 'Oswald', sans-serif;
@@ -166,6 +170,7 @@ span {
   z-index:69;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  overflow:hidden;
 }
 #progLine {
   background-color: rgb(58, 58, 58);
@@ -196,6 +201,24 @@ span {
 }
 #clearCacheButton {
   display: none;
+}
+#settingsButton {
+  bottom: 0%;
+  left:0%;
+  position: absolute;
+  width: 100%;
+  background-color: #20202070;
+}
+#settingsText {
+  position: absolute;
+
+}
+#settingsIcon {
+  position: absolute;
+  bottom: 20%;
+  left:10%;
+  width:10%;
+  height:auto;
 }
 /*
     Fonts:
