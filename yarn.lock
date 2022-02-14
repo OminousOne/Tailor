@@ -3860,6 +3860,11 @@
     "cross-spawn" "^6.0.5"
     "pkg-dir" "^4.2.0"
 
+"yarn@^1.22.17":
+  "integrity" "sha512-H0p241BXaH0UN9IeH//RT82tl5PfNraVpSpEoW+ET7lmopNC61eZ+A+IDvU8FM6Go5vx162SncDL8J1ZjRBriQ=="
+  "resolved" "https://registry.npmjs.org/yarn/-/yarn-1.22.17.tgz"
+  "version" "1.22.17"
+
 "yauzl@^2.10.0":
   "integrity" "sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk="
   "resolved" "https://registry.npmjs.org/yauzl/-/yauzl-2.10.0.tgz"
