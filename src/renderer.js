@@ -3,13 +3,16 @@ var stepSelection = 0;
 function hideMenu() {
   document.getElementById('pullout').style.display = 'none';
   document.getElementById('uiOverlay').style.display = 'none';
-  document.getElementById('isoMenu').style.backgroundColor = '#21949c'
-  document.getElementsByClassName('dropDown')
+  for(const element of document.getElementsByClassName('dropDown')) {
+    element.style.backgroundColor = '#21949c';
+  }
 }
 function showMenu() {
   document.getElementById('pullout').style.display = 'block';
   document.getElementById('uiOverlay').style.display = 'block';
-  document.getElementById('isoMenu').style.backgroundColor = '#4c6b6d'
+  for(const element of document.getElementsByClassName('dropDown')) {
+    element.style.backgroundColor = '#4c6b6d';
+  }
 }
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('clearCacheButton').addEventListener('click', () => {
