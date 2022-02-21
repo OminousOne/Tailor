@@ -189,13 +189,18 @@ function ClearCache() {
 }
 
 function GetOSCacheSize() {
-  var totalBytes = 0;
-  let filenames = fs.readdirSync(`${__dirname}/OSCache/`);
+  try {
+    var totalBytes = 0;
+    let filenames = fs.readdirSync(`${__dirname}/OSCache/`);
   
-  filenames.forEach((file) => {
-      fs.stat(`${__dirname}/OSCache/` + file, function(err, stats) {
-        totalBytes = totalBytes + stats.size;
-        osCacheSize = convertBytes(totalBytes);
+    filenames.forEach((file) => {
+        fs.stat(`${__dirname}/OSCache/` + file, function(err, stats) {
+          totalBytes = totalBytes + stats.size;
+          osCacheSize = convertBytes(totalBytes);
+        });
       });
-  });
+    }
+  catch {
+    console.warn("WARN: Failed to read OS Cache file size. The file has probably not been created.");
+  }
 }
